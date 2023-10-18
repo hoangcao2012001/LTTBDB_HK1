@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 
 import { Pressable, Button, View, Image, Text } from 'react-native';
 
+//khai báo 1 component là lab3 -> để hiển thị giao diện
+//flex: 6 là lấy chiếm 6 phần k gian trống
+//flexDirection: 'row' sắp xếp theo chiều ngang
+// Điều này sẽ chia thành phần ra thành hai phần: một phần chứa hình ảnh và một phần chứa văn bản.
+
+
+// image là lấy ảnh tạo  bỏ vào tên source và resizeMode="contain" để cho vừa ảnh vào kích thước
+
+//alignItems căn theo trục ngang x
+//justifyContent theo trục y dọc
+
+//Pressable tạo 1 cái giống nút có thể nhấp vào bởi ng dùng
+//onPress là con của press để xd hành động của ng dùng
 function Lab3b() {
-  //mặc định đỏ
+  //sử dụng đường dẫn mặc định mặc định đỏ
   var [image, setImage] = useState(require('../assets/anhdo.png'));
   return (
     <View style={{ flex: 1 }}>
@@ -14,6 +27,7 @@ function Lab3b() {
           resizeMode="contain"
           
         />
+      
         <Text style={{color:'red',fontSize:'50PX'}}>
   Puffer  {'\n'}  Jackets  {'\n'}
   {'\n'}
@@ -38,12 +52,11 @@ function Lab3b() {
 
       <View
       
-      
+      //style này là tổng của cái ô dưới
         style={{
           width: '400px',
           height: '5px',
-          //ó có thể nghĩa là phần tử này sẽ chiếm 3 phần (đơn vị) của không gian trống 
-          flex: 3,
+          flex: 4,
           //flexDirection: 'row', cho nằm ngang
           flexDirection: 'row',
           backgroundColor: '#C4C4C4',
@@ -70,6 +83,7 @@ function Lab3b() {
             height: '70px',
             backgroundColor: 'black',
           }}></Pressable>
+          
         <Pressable
         onPress={() => {
             setImage(require('../assets/anh 4 tim.jpg'));
@@ -79,6 +93,8 @@ function Lab3b() {
             height: '70PX',
             backgroundColor: 'purple',
           }}></Pressable>
+
+
         <Pressable
         onPress={() => {
             setImage(require('../assets/anh3 xanh den.jpg'));
